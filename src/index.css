@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 225 15% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 225 15% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 225 15% 12%;
+
+    --primary: 160 84% 36%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 94%;
+    --secondary-foreground: 225 12% 30%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 215 15% 45%;
+
+    --accent: 38 92% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 87%;
+    --input: 220 13% 87%;
+    --ring: 160 84% 36%;
+
+    --radius: 0.75rem;
+
+    --success: 160 84% 36%;
+    --warning: 38 92% 50%;
+    --danger: 0 72% 51%;
+    --info: 217 91% 55%;
+
+    --chart-1: 160 84% 36%;
+    --chart-2: 217 91% 55%;
+    --chart-3: 38 92% 50%;
+    --chart-4: 280 65% 55%;
+    --chart-5: 0 72% 51%;
+
+    --sidebar-background: 0 0% 97%;
+    --sidebar-foreground: 225 12% 35%;
+    --sidebar-primary: 160 84% 36%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 94%;
+    --sidebar-accent-foreground: 225 15% 12%;
+    --sidebar-border: 220 13% 90%;
+    --sidebar-ring: 160 84% 36%;
+
+    --glass: 0 0% 100% / 0.8;
+    --glass-border: 220 13% 87%;
+  }
+
+  .dark {
+    --background: 225 15% 8%;
+    --foreground: 210 20% 92%;
+
+    --card: 225 14% 11%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 225 14% 13%;
+    --popover-foreground: 210 20% 92%;
+
+    --primary: 160 84% 39%;
+    --primary-foreground: 225 15% 8%;
+
+    --secondary: 225 12% 16%;
+    --secondary-foreground: 210 20% 85%;
+
+    --muted: 225 12% 14%;
+    --muted-foreground: 215 15% 52%;
+
+    --accent: 38 92% 50%;
+    --accent-foreground: 225 15% 8%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 225 12% 18%;
+    --input: 225 12% 18%;
+    --ring: 160 84% 39%;
+
+    --success: 160 84% 39%;
+    --warning: 38 92% 50%;
+    --danger: 0 72% 51%;
+    --info: 217 91% 60%;
+
+    --chart-1: 160 84% 39%;
+    --chart-2: 217 91% 60%;
+    --chart-3: 38 92% 50%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 0 72% 51%;
+
+    --sidebar-background: 225 15% 6%;
+    --sidebar-foreground: 210 20% 75%;
+    --sidebar-primary: 160 84% 39%;
+    --sidebar-primary-foreground: 225 15% 8%;
+    --sidebar-accent: 225 12% 12%;
+    --sidebar-accent-foreground: 210 20% 92%;
+    --sidebar-border: 225 12% 14%;
+    --sidebar-ring: 160 84% 39%;
+
+    --glass: 225 14% 11% / 0.7;
+    --glass-border: 225 12% 22%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-card/70 backdrop-blur-xl border border-border/50 rounded-2xl;
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  .text-positive {
+    color: hsl(var(--success));
+  }
+
+  .text-negative {
+    color: hsl(var(--danger));
+  }
+
+  .bg-positive {
+    background-color: hsl(var(--success) / 0.15);
+  }
+
+  .bg-negative {
+    background-color: hsl(var(--danger) / 0.15);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}

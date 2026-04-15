@@ -1,0 +1,4 @@
+project_id = "slgiikfxjprvqsrciwnz"
+
+[functions.car-payoff-advice]
+verify_jwt = false
